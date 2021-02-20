@@ -1,0 +1,50 @@
+version: '3'
+services:
+  php7:
+    build:
+        context: "./docker/php7"
+        dockerfile: "Dockerfile"
+    ports:
+        - "80:80"
+    volumes:
+        - .:/var/www/html
+    networks:
+     - slim
+  node:
+    build:
+      context: ./docker/node
+      dockerfile: Dockerfile
+    volumes:
+        - .:/var/www/html
+    tty: true
+    ports:
+        - "3000:3000"
+    networks:
+      - slim
+  db:
+    #dockerfileなくてもpullするだけだったら下記のコメントでもOK
+    #image: "mysql:latest"
+    ports:
+     - "13306:3306"
+    build:
+        context: "./docker/mysql"
+        dockerfile: "Dockerfile"
+    environment:
+      MYSQL_DATABASE: slim
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+        # 永続化することでコンテナ削除してもOK
+        - "slimvolume:/var/lib/mysql"
+        # 初期データを投入するSQLが格納されているdir
+        - ./docker/mysql/init/:/docker-entrypoint-initdb.d/
+    networks:
+     - slim
+
+networks:
+  slim:
+    driver: "bridge"
+
+volumes: 
+  slimvolume: 
