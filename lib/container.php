@@ -28,6 +28,7 @@ $container->set("view",
     }
 );
 
+//↓下記はclouseで書かないとだめ
 $container->set("person",
     \DI\value(function (string $name, int $age) {
         //男を使いたい場合
