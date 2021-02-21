@@ -1,15 +1,24 @@
 <?php
 
+namespace lib;
+
 use DI\Container;
 use Slim\Views\Twig;
 use Slim\Factory\AppFactory;
+use lib\Person\PersonInterface;
+use lib\Person\Man;
+use lib\Person\Woman;
+
+require_once __DIR__ . '/Person/PersonInterface.php';
+require_once __DIR__ . '/Person/Man.php';
+require_once __DIR__ . '/Person/Woman.php';
 
 $container = new Container();
 
 $name = $_ENV['APP_DIR'];
 $templateDir = sprintf('%s/view', $_ENV['APP_DIR']);
 
-//↓と同じ意味
+//twigのセット　↓と同じ意味
 //$twig = Twig::create($templateDir);
 //$container->set("view", $twig);
 $container->set("view",
@@ -17,6 +26,16 @@ $container->set("view",
         $twig = Twig::create($templateDir);
         return $twig;
     }
+);
+
+$container->set("person",
+    \DI\value(function (string $name, int $age) {
+        //男を使いたい場合
+        $person = new Man($name, $age);
+        //女を使いたい場合
+        //$person = new Woman($name, $age);
+        return $person;
+    })
 );
 
 AppFactory::setContainer($container);
