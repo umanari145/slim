@@ -1,5 +1,8 @@
 # slim
 
 - index.php エントリーポイント
-- routing 
+- lib ライブラリ
+    - container.php DIコンテナ
+- routing ルーティングディレクトリ 
     - base.php ルーティングのindex.php
+- view TwigのHTMLファイル
