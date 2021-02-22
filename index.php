@@ -13,7 +13,7 @@ $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 // DI container
-require_once __DIR__ . '/lib/container.php';
+require_once __DIR__ . '/container/container.php';
 
 $app = AppFactory::create();
 

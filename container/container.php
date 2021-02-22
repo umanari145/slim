@@ -9,10 +9,6 @@ use lib\Person\PersonInterface;
 use lib\Person\Man;
 use lib\Person\Woman;
 
-require_once __DIR__ . '/Person/PersonInterface.php';
-require_once __DIR__ . '/Person/Man.php';
-require_once __DIR__ . '/Person/Woman.php';
-
 $container = new Container();
 
 $name = $_ENV['APP_DIR'];

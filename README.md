@@ -1,8 +1,9 @@
 # slim
 
 - index.php エントリーポイント
-- lib ライブラリ
+- container 
     - container.php DIコンテナ
+- lib ライブラリ
     - Person Personディレクトリ
         - PersonInterface PersonInterface
         - Man.php 男性クラス
