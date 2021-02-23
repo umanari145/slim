@@ -35,28 +35,10 @@ $container->set("template",
     })
 );*/
 
-/*$container->set("logger",
-    function () {
-
-        ORM::configure('mysql:host=' . DB_HOST. ';dbname=' . DB_NAME);
-        ORM::configure('username', DB_USER);
-        ORM::configure('password', DB_PASS);
-        ORM::configure('driver_options', array(\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
-        ORM::configure('return_result_sets', true); // returns result sets
-        ORM::configure('logging', true); // returns result sets
-
-        $logUtil = $this->logUtil;
-        ORM::configure('logger', function ($log_string) use ($logUtil) {
-            $logUtil->addInfo('sql ' . $log_string);
-        });
-
-    }
-);*/
-
 $container->set("db",
     function () {
-
         $capsule = new Capsule;
+
         $capsule->addConnection([
             'driver'    => $_ENV['DB_TYPE'],
             'host'      => $_ENV['DB_HOST'],

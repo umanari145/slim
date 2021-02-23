@@ -21,7 +21,7 @@ class TopController extends BaseController
         //$user = $this->db->table('users')->get();
         //var_dump($user);
 
-        //
+        //Eloquentと接続情報が共有されている
         var_dump(User::find(1));
 
         exit();
