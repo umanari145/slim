@@ -10,9 +10,13 @@ class BaseController
 {
     protected $template;
 
+    protected $db;
+
     public function __construct(ContainerInterface $container)
     {
         $this->template = $container->get('template');
+
+        $this->db = $container->get('db');
     }
 
 }

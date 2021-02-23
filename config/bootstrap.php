@@ -13,6 +13,5 @@ $dotenv->load();
 require_once __DIR__ . '/container.php';
 
 $app = AppFactory::create();
-
 //routing
 require_once __DIR__ . '/route/base.php';

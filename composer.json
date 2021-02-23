@@ -5,7 +5,9 @@
         "slim/twig-view": "^3.0",
         "vlucas/phpdotenv": "^5.3",
         "monolog/monolog": "^1.26",
-        "php-di/php-di": "^6.0"
+        "php-di/php-di": "^6.0",
+        "illuminate/database": "^5.8",
+        "fzaninotto/faker": "^1.9"
     },
     "autoload": {
         "psr-4": {
