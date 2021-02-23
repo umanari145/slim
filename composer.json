@@ -9,8 +9,7 @@
     },
     "autoload": {
         "psr-4": {
-            "controller\\": "controller/",
-            "lib\\": "lib/"
+            "App\\": "src/"
         }
     }
 }

@@ -5,20 +5,19 @@ namespace lib;
 use DI\Container;
 use Slim\Views\Twig;
 use Slim\Factory\AppFactory;
-use lib\Person\PersonInterface;
-use lib\Person\Man;
-use lib\Person\Woman;
+use Lib\Person\PersonInterface;
+use Lib\Person\Man;
+use Lib\Person\Woman;
+
 
 $container = new Container();
-
-$name = $_ENV['APP_DIR'];
-$templateDir = sprintf('%s/view', $_ENV['APP_DIR']);
 
 //twigのセット　↓と同じ意味
 //$twig = Twig::create($templateDir);
 //$container->set("view", $twig);
-$container->set("view",
-    function () use ($templateDir) {
+$container->set("template",
+    function () {
+        $templateDir = sprintf('%s/view', $_ENV['APP_DIR']);
         $twig = Twig::create($templateDir);
         return $twig;
     }
