@@ -13,6 +13,7 @@ class TopController extends BaseController
 
     public function showTop(Request $request, Response $response, array $args): Response
     {
+        $this->lo->info("メソッドの開始です。", ['aaaa', 'bbbbb']);
         //インスタンスに引数があるときはcall
         //$person = $this->container->call("person", ['John', 22]);
         //$person->showName();
@@ -22,9 +23,8 @@ class TopController extends BaseController
         //var_dump($user);
 
         //Eloquentと接続情報が共有されている
-        var_dump(User::find(1));
-
-        exit();
+        //var_dump(User::find(1));
+        //exit();
         return $this->template->render($response, "index.html");
     }
 

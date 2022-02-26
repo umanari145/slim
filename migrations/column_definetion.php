@@ -9,4 +9,3 @@ $db->schema()->create('users', function ($table) {
     $table->string('email');
     $table->timestamps();
 });
-

@@ -10,6 +10,7 @@ class BaseController
 {
     protected $template;
 
+    protected $log;
     protected $db;
 
     public function __construct(ContainerInterface $container)
@@ -17,6 +18,7 @@ class BaseController
         $this->template = $container->get('template');
 
         $this->db = $container->get('db');
+        $this->log = $container->get('log');
     }
 
 }
