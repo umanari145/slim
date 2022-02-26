@@ -2,7 +2,7 @@
 
 ## 参考URL
 
-https://qiita.com/erik_t/items/14d0103e343e440f6dc5#container
+https://qiita.com/erik_t/items/14d0103e343e440f6dc5#container<br>
 https://odan.github.io/2019/11/05/slim4-tutorial.html
 
 ## フォルダ構成
@@ -31,3 +31,16 @@ https://odan.github.io/2019/11/05/slim4-tutorial.html
             - Woman.php 女性クラス
 
 - view TwigのHTMLファイル
+
+
+## migration 
+
+column定義
+```
+php ./migrations/column_definetion.php 
+```
+
+faker
+```
+php ./migrations/sample_data.php 
+```
